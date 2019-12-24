@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
+import { Firebase, FirebaseContext } from '../firebase';
 
 class BasicLayout extends Component {
   render() {
     return (
-      <div>
+      <FirebaseContext.Provider value={new Firebase()}>
         {this.props.children}
-      </div>
+      </FirebaseContext.Provider>
     );
   }
 }
